@@ -1,0 +1,4 @@
+ladix:
+    resource: "@LadixBundle/Resources/config/routing.xml"
+    prefix:   /
+
