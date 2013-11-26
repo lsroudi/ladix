@@ -11,7 +11,8 @@
 
 namespace Ladix\LadixBundle\Model;
 
-interface CritereInterface {
+interface CritereInterface 
+{
 
     /**
      * @return integer
@@ -19,7 +20,7 @@ interface CritereInterface {
     public function getId();
 
     /**
-     * @return String
+     * @return string
      */
     public function getLabelCritere();
 

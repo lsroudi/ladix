@@ -11,7 +11,8 @@
 
 namespace Ladix\LadixBundle\Model;
 
-interface GroupeInterface {
+interface GroupeInterface 
+{
 
     /**
      * @return integer

@@ -11,7 +11,8 @@
 
 namespace Ladix\LadixBundle\Model;
 
-interface FamilleInterface {
+interface FamilleInterface 
+{
 
     /**
      * @return integer

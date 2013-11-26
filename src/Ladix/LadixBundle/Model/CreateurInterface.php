@@ -11,7 +11,8 @@
 
 namespace Ladix\LadixBundle\Model;
 
-interface CreateurInterface {
+interface CreateurInterface 
+{
 
     /**
      * @return integer

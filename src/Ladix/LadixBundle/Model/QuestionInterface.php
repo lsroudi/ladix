@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of newPHPClass
+ * Description of QuestionInterface
  *
  * (c) lsroudi <http://lsroudi.com/> <lsroudi@gmail.com>
  * 
@@ -11,7 +11,8 @@
 
 namespace Ladix\LadixBundle\Model;
 
-interface QuestionInterface {
+interface QuestionInterface 
+{
 
     /**
      * @return integer
