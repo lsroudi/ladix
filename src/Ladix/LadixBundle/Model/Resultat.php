@@ -27,9 +27,9 @@ abstract class Resultat implements ResultatInterface
 
     /**
      *
-     * @var string
+     * @var text
      */
-    protected $labelResultat;
+    protected $resultat;
 
     /**
      * @return integer
@@ -40,20 +40,20 @@ abstract class Resultat implements ResultatInterface
     }
 
     /**
-     * @return String
+     * @return text
      */
-    public function getLabelResultat()
+    public function getResultat()
     {
-        return $this->labelResultat;
+        return $this->resultat;
     }
 
     /**
-     * @param type $label
+     * @param type $resultat
      * @return self
      */
-    public function setLabelResultat($label)
+    public function setResultat($resultat)
     {
-        $this->labelResultat = $label;
+        $this->resultat = $resultat;
 
         return $this;
     }

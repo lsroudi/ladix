@@ -1,10 +1,5 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-
 /**
  * Description of Membre
  *
@@ -15,6 +10,8 @@
  */
 
 namespace Ladix\LadixBundle\Model;
+
+use Doctrine\Common\Collections\ArrayCollection;
 
 abstract class Membre implements MembreInterface {
 
@@ -32,9 +29,20 @@ abstract class Membre implements MembreInterface {
 
     /**
      *
+     * @var Collection
+     */
+    protected $projets;
+
+    /**
+     *
      * @var $prenomMembre
      */
     protected $prenomMembre;
+
+    public function __construct()
+    {
+        
+    }
 
     /**
      * @return integer
@@ -78,9 +86,27 @@ abstract class Membre implements MembreInterface {
     public function setPrenomMembre($prenom)
     {
         $this->prenomMembre = $prenom;
-        
+
         return $this;
     }
+
+    /**
+     * 
+     * @param \Ladix\LadixBundle\Model\ProjetInterface $projet
+     */
+    public function addProjet(ProjetInterface $projet)
+    {
+        if (!$this->projets->contains($projet))
+        {
+            $this->getProjets()->add($projet);
+        }
+    }
+
+    public function getProjets()
+    {
+        return $this->projets ? : $this->projets = new ArrayCollection();
+    }
+
 }
 ?>
 

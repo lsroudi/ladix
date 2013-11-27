@@ -11,7 +11,8 @@
 
 namespace Ladix\LadixBundle\Model;
 
-abstract class Question implements QuestionInterface {
+abstract class Question implements QuestionInterface 
+{
 
     /**
      *
@@ -34,7 +35,7 @@ abstract class Question implements QuestionInterface {
     }
 
     /**
-     * @return String
+     * @return string
      */
     public function getLabelQuestion()
     {
