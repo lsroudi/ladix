@@ -1,0 +1,20 @@
+<?xml version="1.0" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+           xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+           xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    <services>
+        <service id="ladix.createur.account_create.form.factory" class="Ladix\LadixBundle\Form\Factory\FormFactory">
+            <argument type="service" id="form.factory" />        
+            <argument>%ladix.model.createur.name%</argument>
+            <argument>%ladix.model.createur.type%</argument>
+            <argument>%ladix.model.createur.validation_groups%</argument>
+        </service>
+
+        <service id="ladix.model.createur.type" class="Ladix\LadixBundle\Form\Type\CreateurType">
+            <tag name="form.type" alias="ladix_createur" />
+            <argument>%ladix.model.createur.class%</argument>
+        </service>
+    </services>
+
+</container>

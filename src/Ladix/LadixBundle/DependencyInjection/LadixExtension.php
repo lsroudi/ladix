@@ -22,7 +22,16 @@ class LadixExtension extends Extension
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
 
+//        die(var_dump($config['model']['createur']['name']));
+        $container->setParameter('ladix.model.createur.name', $config['model']['createur']['name']);
+        $container->setParameter('ladix.model.createur.type', $config['model']['createur']['type']);
+        $container->setParameter('ladix.model.createur.validation_groups', $config['model']['createur']['validation_groups']);
+        $container->setParameter('ladix.model.createur.class', $config['model']['createur']['class']);
+        $container->setParameter('ladix.template.engine', $config['template']['engine']);
+        
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
         $loader->load('services.xml');
+        $loader->load('createur.xml');
+        $loader->load('manager.xml');
     }
 }

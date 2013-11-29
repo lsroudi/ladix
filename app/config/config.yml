@@ -64,3 +64,14 @@ swiftmailer:
     username:  %mailer_user%
     password:  %mailer_password%
     spool:     { type: memory }
+    
+#ladix 
+
+ladix:
+    model:
+      createur:
+              name :  ladix_createur_form
+              type :  ladix_createur  
+              class:  Ladix\LadixBundle\Entity\Createur
+    template:
+        engine: twig

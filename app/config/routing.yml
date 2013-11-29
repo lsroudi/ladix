@@ -1,4 +1,6 @@
 ladix:
     resource: "@LadixBundle/Resources/config/routing.xml"
     prefix:   /
-
+ladix_createur:
+    resource: "@LadixBundle/Resources/config/routing/createur.xml"
+    prefix: /createur
