@@ -12,8 +12,11 @@ use Symfony\Component\DependencyInjection\Loader;
  *
  * To learn more see {@link http://symfony.com/doc/current/cookbook/bundles/extension.html}
  */
-class LadixExtension extends Extension
+class LadixExtension extends Extension 
 {
+
+    private $container;
+
     /**
      * {@inheritDoc}
      */
@@ -21,17 +24,41 @@ class LadixExtension extends Extension
     {
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
+        $this->container = $container;
 
-//        die(var_dump($config['model']['createur']['name']));
-        $container->setParameter('ladix.model.createur.name', $config['model']['createur']['name']);
-        $container->setParameter('ladix.model.createur.type', $config['model']['createur']['type']);
-        $container->setParameter('ladix.model.createur.validation_groups', $config['model']['createur']['validation_groups']);
-        $container->setParameter('ladix.model.createur.class', $config['model']['createur']['class']);
-        $container->setParameter('ladix.template.engine', $config['template']['engine']);
-        
-        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__.'/../Resources/config'));
-        $loader->load('services.xml');
-        $loader->load('createur.xml');
+        $this->remapModelCreateurParams($config, array('model' => "ladix.model.createur.%s"));
+        $this->remapTemplateEngine($config);
+
+        $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
+        $this->loadFormService();
         $loader->load('manager.xml');
     }
+
+    private function remapModelCreateurParams($config, $map)
+    {
+        foreach ($map as $key => $value)
+        {
+            if (array_key_exists($key, $config)){
+                foreach ($config[$key] as $v)
+                {
+                    if (is_array($v)){
+                        foreach ($v as $k => $val){
+                            $this->container->setParameter(sprintf($value, $k), $val);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    private function remapTemplateEngine($config)
+    {
+        $this->container->setParameter('ladix.template.engine', $config['template']['engine']);
+    }
+    private function loadFormService()
+    {
+        $laoder = new Loader\XmlFileLoader($this->container, new FileLocator(__DIR__ . '/../Resources/config/form'));
+        $laoder->load('createur.xml');
+    }
+
 }
