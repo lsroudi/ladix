@@ -22,6 +22,12 @@ abstract class Createur implements CreateurInterface
 
     /**
      *
+     * @var type 
+     */
+    protected $emailCreateur;
+
+    /**
+     *
      * @var string
      */
     protected $nomCreateur;
@@ -37,6 +43,12 @@ abstract class Createur implements CreateurInterface
      * @var \DateTime
      */
     protected $dateNaissanceCreateur;
+    
+    /**
+     *
+     * @var integer 
+     */
+    protected $projetId;
 
     public function __construct()
     {
@@ -49,6 +61,27 @@ abstract class Createur implements CreateurInterface
     public function getId()
     {
         return $this->id;
+    }
+    
+    /**
+     * 
+     * @return type
+     */
+    public function getEmailCreateur()
+    {
+        return $this->emailCreateur;
+    }
+    
+    /**
+     * 
+     * @param type $email
+     * @return self
+     */
+    public function setEmailCreateur($email)
+    {
+        $this->emailemailCreateur = $email;
+        
+        return $this;
     }
 
     /**
@@ -66,7 +99,7 @@ abstract class Createur implements CreateurInterface
     public function setNomCreateur($nom)
     {
         $this->nomCreateur = $nom;
-        
+
         return $this;
     }
 
@@ -85,7 +118,7 @@ abstract class Createur implements CreateurInterface
     public function setPrenomCreateur($prenom)
     {
         $this->prenomCreateur = $prenom;
-        
+
         return $this;
     }
 
@@ -104,6 +137,27 @@ abstract class Createur implements CreateurInterface
     public function setDateNaissanceCreateur($date)
     {
         $this->dateNaissanceCreateur = $date;
+
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return integer
+     */
+    public function getProjetId()
+    {
+        return $this->projetId;
+    }
+    
+    /**
+     * 
+     * @param type $projetId
+     * @return self;
+     */
+    public function setProjetId($projetId)
+    {
+        $this->projetId = $projetId;
         
         return $this;
     }

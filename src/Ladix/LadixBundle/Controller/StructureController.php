@@ -4,25 +4,25 @@ namespace Ladix\LadixBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
-use Ladix\LadixBundle\Entity\Projet;
+use Ladix\LadixBundle\Entity\Structure;
 
-class ProjetController extends Controller
+class StructureController extends Controller
 {
 
     public function createAction(Request $request)
     {
         /** @var $formFactory Ladix\LadixBundle\Form\Factory\FactoryInterface */
-        $formFactory = $this->container->get('ladix.projet.account_create.form.factory');
+        $formFactory = $this->container->get('ladix.structure.account_create.form.factory');
         /** @var $createurManager Ladix\LadixBundle\EntityManager\CreateurManager */
 //        $createurManager = $this->container->get('ladix.createur.manager');
 
 
-        $projet = new Projet();
+        $structure = new Structure();
 
 
 
         $form = $formFactory->createForm();
-        $form->setData($projet);
+        $form->setData($structure);
 
         if ('POST' === $request->getMethod()) {
             $form->bind($request);

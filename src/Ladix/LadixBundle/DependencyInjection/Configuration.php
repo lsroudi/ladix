@@ -31,12 +31,12 @@ class Configuration implements ConfigurationInterface
                             ->scalarNode('engine')->defaultValue('twig')
                 ->end();
         
-        $this->addCreateursection($rootNode);
+        $this->addModelsection($rootNode);
         
         return $treeBuilder;
                
     }
-    private function addCreateursection(ArrayNodeDefinition $node)
+    private function addModelsection(ArrayNodeDefinition $node)
     {
         $node
             ->children()
@@ -45,7 +45,7 @@ class Configuration implements ConfigurationInterface
                         ->arrayNode('createur')
                             ->children()
                                 ->scalarNode('class')->defaultValue('Ladix\LadixBundle\Entity\Createur')->end()
-                                ->scalarNode('type')->defaultValue('Ladix_Createur')->end()
+                                ->scalarNode('type')->defaultValue('Ladix_createur')->end()
                                 ->scalarNode('name')->defaultValue('ladix_createur_form')->end()
                                 ->arrayNode('validation_groups')
                                     ->prototype('scalar')->end()
@@ -53,6 +53,39 @@ class Configuration implements ConfigurationInterface
                                 ->end()
                             ->end()
                         ->end()
+                        ->arrayNode('projet')
+                            ->children()
+                                ->scalarNode('class')->defaultValue('Ladix\LadixBundle\Entity\Projet')->end()
+                                ->scalarNode('type')->defaultValue('Ladix_projet')->end()
+                                ->scalarNode('name')->defaultValue('ladix_projet_form')->end()
+                                ->arrayNode('validation_groups')
+                                    ->prototype('scalar')->end()
+                                    ->defaultValue(array('Projet', 'Default'))
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode('structure')
+                            ->children()
+                                ->scalarNode('class')->defaultValue('Ladix\LadixBundle\Entity\Structure')->end()
+                                ->scalarNode('type')->defaultValue('Ladix_structure')->end()
+                                ->scalarNode('name')->defaultValue('ladix_structure_form')->end()
+                                ->arrayNode('validation_groups')
+                                    ->prototype('scalar')->end()
+                                    ->defaultValue(array('Structure', 'Default'))
+                                ->end()
+                            ->end()
+                        ->end()
+                        ->arrayNode('membre')
+                            ->children()
+                                ->scalarNode('class')->defaultValue('Ladix\LadixBundle\Entity\Membre')->end()
+                                ->scalarNode('type')->defaultValue('Ladix_membre')->end()
+                                ->scalarNode('name')->defaultValue('ladix_membre_form')->end()
+                                ->arrayNode('validation_groups')
+                                    ->prototype('scalar')->end()
+                                    ->defaultValue(array('Structure', 'Default'))
+                                ->end()
+                            ->end()
+                        ->end()                
                     ->end()
                 ->end()
             ->end();

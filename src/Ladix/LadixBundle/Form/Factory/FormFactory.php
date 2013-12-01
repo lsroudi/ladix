@@ -1,8 +1,6 @@
 <?php
 
-/*
- * To change this template, choose Tools | Templates
-  /**
+/**
  * Description of FormFactory
  *
  * (c) lsroudi <http://lsroudi.com/> <lsroudi@gmail.com>

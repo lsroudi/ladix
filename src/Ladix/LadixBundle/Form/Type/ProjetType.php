@@ -15,13 +15,13 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class CreateurType extends AbstractType 
+class ProjetType extends AbstractType 
 {
 
     private $class;
 
     /**
-     * @param string $class The Createur class name
+     * @param string $class The Projet class name
      */
     public function __construct($class)
     {
@@ -31,11 +31,11 @@ class CreateurType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('nomCreateur', 'text', array('label' => 'Nom :'))
-                ->add('prenomCreateur', 'text', array('label' => 'Prenom :'))
-                ->add('emailCreateur', 'text', array('label' => 'Email :'))
-                ->add('dateNaissanceCreateur', 'date', array('required' => true, 'widget' => 'choice', 'label' => ' ', 'years' => range(1915, 1999), 'format' => 'dd-MM-yyyy', 'empty_value' => array('year' => 'Année', 'month' => 'Mois', 'day' => 'Jour'), 'invalid_message' => 'Veuillez entrer une date de naissance valide'))
-
+                ->add('nomProjet', 'text', array('label' => 'Nom du projet: '))
+                ->add('dateCreationProjet', 'date', array(
+                    'widget' => 'single_text',
+                    'format' => 'dd/MM/yyyy', 'label' => 'Date de début: ', 'required' => true))
+                
         ;
     }
 
@@ -43,13 +43,13 @@ class CreateurType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => $this->class,
-            'intention' => 'create_createur',
+            'intention' => 'create_projet',
         ));
     }
 
     public function getName()
     {
-        return 'ladix_createur';
+        return 'ladix_projet';
     }
 
 }

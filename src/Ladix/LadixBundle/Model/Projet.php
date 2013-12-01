@@ -19,11 +19,19 @@ abstract class Projet implements ProjetInterface
      * @var integer
      */
     protected $id;
+    
     /**
      *
      * @var string
      */
     protected $nomProjet;
+    
+    /**
+     *
+     * @var \DateTime
+     */
+    protected $dateCreationProjet;
+    
     /**
      * @return integer
      */
@@ -47,6 +55,27 @@ abstract class Projet implements ProjetInterface
     public function setNomProjet($nom)
     {
         $this->nomProjet = $nom;
+        
+        return $this;
+    }
+    
+    /**
+     * 
+     * @return \DateTime
+     */
+    public function getDateCreationProjet()
+    {
+        return $this->dateCreationProjet;        
+    }
+    
+    /**
+     * 
+     * @param type $date
+     * @return self
+     */
+    public function setDateCreationProjet($date)
+    {
+        $this->dateCreationProjet = $date;
         
         return $this;
     }

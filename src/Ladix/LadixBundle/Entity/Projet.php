@@ -1,7 +1,7 @@
 <?php
 
 /**
- * Description of Createur
+ * Description of Projet
  *
  * (c) lsroudi <http://lsroudi.com/> <lsroudi@gmail.com>
  * 
@@ -11,9 +11,9 @@
 
 namespace Ladix\LadixBundle\Entity;
 
-use Ladix\LadixBundle\Model\Createur as ProjectCreateur;
+use Ladix\LadixBundle\Model\Projet as ProjetEntity;
 
-class Createur extends ProjectCreateur
+class Projet extends ProjetEntity
 {
 
 

@@ -69,9 +69,21 @@ swiftmailer:
 
 ladix:
     model:
-      createur:
+        createur:
               name :  ladix_createur_form
               type :  ladix_createur  
               class:  Ladix\LadixBundle\Entity\Createur
+        projet:
+              name :  ladix_projet_form
+              type :  ladix_projet
+              class:  Ladix\LadixBundle\Entity\Projet  
+        structure:
+              name :  ladix_structure_form
+              type :  ladix_structure
+              class:  Ladix\LadixBundle\Entity\Structure  
+        membre:
+              name :  ladix_membre_form
+              type :  ladix_membre
+              class:  Ladix\LadixBundle\Entity\Membre               
     template:
         engine: twig
