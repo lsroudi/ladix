@@ -15,7 +15,7 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
-class StructureType extends AbstractType 
+class FamilleType extends AbstractType 
 {
 
     private $class;
@@ -31,7 +31,7 @@ class StructureType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder
-                ->add('nomStructure', 'text', array('label' => 'Nom du structure: '))
+                ->add('labelFamille', 'text', array('label' => 'Famille : '))
                 
                 
         ;
@@ -41,13 +41,13 @@ class StructureType extends AbstractType
     {
         $resolver->setDefaults(array(
             'data_class' => $this->class,
-            'intention' => 'create_structure',
+            'intention' => 'create_famille',
         ));
     }
 
     public function getName()
     {
-        return 'ladix_structure';
+        return 'ladix_famille';
     }
 
 }

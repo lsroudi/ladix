@@ -27,6 +27,7 @@ abstract class Famille implements FamilleInterface
     protected $labelFamille;
 
     /**
+     * 
      * @return integer
      */
     public function getId()

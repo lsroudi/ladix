@@ -45,7 +45,32 @@ class LadixExtension extends Extension
         $container->setParameter('ladix.model.membre.name', $config['model']['membre']['name']);
         $container->setParameter('ladix.model.membre.type', $config['model']['membre']['type']);
         $container->setParameter('ladix.model.membre.validation_groups', $config['model']['membre']['validation_groups']);
-        $container->setParameter('ladix.model.membre.class', $config['model']['membre']['class']);        
+        $container->setParameter('ladix.model.membre.class', $config['model']['membre']['class']);   
+        
+        $container->setParameter('ladix.model.famille.name', $config['model']['famille']['name']);
+        $container->setParameter('ladix.model.famille.type', $config['model']['famille']['type']);
+        $container->setParameter('ladix.model.famille.validation_groups', $config['model']['famille']['validation_groups']);
+        $container->setParameter('ladix.model.famille.class', $config['model']['famille']['class']);  
+        
+        $container->setParameter('ladix.model.critere.name', $config['model']['critere']['name']);
+        $container->setParameter('ladix.model.critere.type', $config['model']['critere']['type']);
+        $container->setParameter('ladix.model.critere.validation_groups', $config['model']['critere']['validation_groups']);
+        $container->setParameter('ladix.model.critere.class', $config['model']['critere']['class']);   
+        
+        $container->setParameter('ladix.model.reponse.name', $config['model']['reponse']['name']);
+        $container->setParameter('ladix.model.reponse.type', $config['model']['reponse']['type']);
+        $container->setParameter('ladix.model.reponse.validation_groups', $config['model']['reponse']['validation_groups']);
+        $container->setParameter('ladix.model.reponse.class', $config['model']['reponse']['class']);  
+        
+        $container->setParameter('ladix.model.question.name', $config['model']['question']['name']);
+        $container->setParameter('ladix.model.question.type', $config['model']['question']['type']);
+        $container->setParameter('ladix.model.question.validation_groups', $config['model']['question']['validation_groups']);
+        $container->setParameter('ladix.model.question.class', $config['model']['question']['class']);   
+        
+        $container->setParameter('ladix.model.groupe.name', $config['model']['groupe']['name']);
+        $container->setParameter('ladix.model.groupe.type', $config['model']['groupe']['type']);
+        $container->setParameter('ladix.model.groupe.validation_groups', $config['model']['groupe']['validation_groups']);
+        $container->setParameter('ladix.model.groupe.class', $config['model']['groupe']['class']);         
 
         $this->remapTemplateEngine($config);
         $loader = new Loader\XmlFileLoader($container, new FileLocator(__DIR__ . '/../Resources/config'));
@@ -66,6 +91,11 @@ class LadixExtension extends Extension
         $laoder->load('projet.xml');
         $laoder->load('structure.xml');
         $laoder->load('membre.xml');
+        $laoder->load('famille.xml');
+        $laoder->load('critere.xml');
+        $laoder->load('reponse.xml');
+        $laoder->load('question.xml');   
+        $laoder->load('groupe.xml');        
         
     }
 

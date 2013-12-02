@@ -13,3 +13,18 @@ ladix_membre:
 ladix_structure:
     resource: "@LadixBundle/Resources/config/routing/structure.xml"
     prefix: /structure      
+ladix_famille:
+    resource: "@LadixBundle/Resources/config/routing/famille.xml"
+    prefix: /famille
+ladix_critere:
+    resource: "@LadixBundle/Resources/config/routing/critere.xml"
+    prefix: /critere  
+ladix_reponse:
+    resource: "@LadixBundle/Resources/config/routing/reponse.xml"
+    prefix: /reponse   
+ladix_question:
+    resource: "@LadixBundle/Resources/config/routing/question.xml"
+    prefix: /question 
+ladix_groupe:
+    resource: "@LadixBundle/Resources/config/routing/groupe.xml"
+    prefix: /groupe     

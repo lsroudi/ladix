@@ -4,8 +4,8 @@
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
         xsi:schemaLocation="http://symfony.com/schema/routing http://symfony.com/schema/routing/routing-1.0.xsd">
 
-    <route id="ladix_structure_create" pattern="/creer">
-        <default key="_controller">LadixBundle:Structure:create</default>
+    <route id="ladix_critere_create" pattern="/creer">
+        <default key="_controller">LadixBundle:Critere:create</default>
     </route>
 
 </routes>

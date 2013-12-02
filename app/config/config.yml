@@ -84,6 +84,26 @@ ladix:
         membre:
               name :  ladix_membre_form
               type :  ladix_membre
-              class:  Ladix\LadixBundle\Entity\Membre               
+              class:  Ladix\LadixBundle\Entity\Membre 
+        famille:
+              name :  ladix_famille_form
+              type :  ladix_famille
+              class:  Ladix\LadixBundle\Entity\Famille
+        critere:
+              name :  ladix_critere_form
+              type :  ladix_critere
+              class:  Ladix\LadixBundle\Entity\Critere  
+        reponse:
+              name :  ladix_reponse_form
+              type :  ladix_reponse
+              class:  Ladix\LadixBundle\Entity\Reponse 
+        question:
+              name :  ladix_question_form
+              type :  ladix_question
+              class:  Ladix\LadixBundle\Entity\Question
+        groupe:
+              name :  ladix_groupe_form
+              type :  ladix_groupe
+              class:  Ladix\LadixBundle\Entity\Groupe                 
     template:
         engine: twig
