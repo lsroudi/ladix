@@ -28,7 +28,8 @@ class Configuration implements ConfigurationInterface
                 ->children()
                     ->arrayNode('template')
                         ->children()
-                            ->scalarNode('engine')->defaultValue('twig')
+                            ->scalarNode('engine')->defaultValue('twig')->end()
+                            ->scalarNode('parent')->defaultValue('LadixBundle::main-espace.html.twig')->end()
                 ->end();
         
         $this->addModelsection($rootNode);

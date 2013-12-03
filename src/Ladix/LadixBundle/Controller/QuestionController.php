@@ -36,7 +36,7 @@ class QuestionController extends Controller
             }
         }
 
-        return $this->container->get('templating')->renderResponse('LadixBundle:Createur:create.html.'.$this->getEngine(), array(
+        return $this->container->get('templating')->renderResponse('LadixBundle:Question:create.html.'.$this->getEngine(), array(
             'form' => $form->createView(),
         ));
     }

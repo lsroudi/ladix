@@ -77,11 +77,13 @@ class LadixExtension extends Extension
         $loader->load('manager.xml');
 
         $this->loadFormService();
+        $this->loadExtensionService();
     }
 
     private function remapTemplateEngine($config)
     {
         $this->container->setParameter('ladix.template.engine', $config['template']['engine']);
+        $this->container->setParameter('ladix.template.parent', $config['template']['parent']);
     }
 
     private function loadFormService()
@@ -96,6 +98,12 @@ class LadixExtension extends Extension
         $laoder->load('reponse.xml');
         $laoder->load('question.xml');   
         $laoder->load('groupe.xml');        
+        
+    }
+    private function loadExtensionService()
+    {
+        $laoder = new Loader\XmlFileLoader($this->container, new FileLocator(__DIR__ . '/../Resources/config/extension'));
+        $laoder->load('twigextension.xml');    
         
     }
 

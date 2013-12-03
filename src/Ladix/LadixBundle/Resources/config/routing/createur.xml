@@ -7,12 +7,5 @@
     <route id="ladix_createur_create" pattern="/creer">
         <default key="_controller">LadixBundle:Createur:create</default>
     </route>
-
-    <!--    <route id="fos_user_registration_check_email" pattern="/check-email">
-        <default key="_controller">FOSUserBundle:Registration:checkEmail</default>
-        <requirement key="_method">GET</requirement>
-    </route>-->
-
-
-
+      
 </routes>

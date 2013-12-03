@@ -4,7 +4,7 @@ ladix:
 ladix_createur:
     resource: "@LadixBundle/Resources/config/routing/createur.xml"
     prefix: /createur
-ladix_createur:
+ladix_projet:
     resource: "@LadixBundle/Resources/config/routing/projet.xml"
     prefix: /projet   
 ladix_membre:

@@ -107,3 +107,4 @@ ladix:
               class:  Ladix\LadixBundle\Entity\Groupe                 
     template:
         engine: twig
+        parent: LadixBundle::main-espace.html.twig
